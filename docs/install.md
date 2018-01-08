@@ -35,7 +35,10 @@ First [clone the repos](download).
 
 Must be run **in sequence**
 
-	$ docker run -it 
+	$ docker run -it mongo
+	$ docker run -it pipeline
+	$ docker run -it geoserver
+	$ docker run -it webserver 
 
 ## Stopping the containers
 
