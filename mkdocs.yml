@@ -1,0 +1,8 @@
+site_name: Documentation for Landscape Fuel Moisture Condition
+pages:
+   - Home: index.md
+   - About: about.md
+   - Download: download.md
+   - Installation: install.md
+   - Deployment: deploy.md
+theme: readthedocs
