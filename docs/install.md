@@ -19,8 +19,9 @@ First [clone the repos](download).
 
 ## Building the containers
 
-	$ cd lfmc-geoserver
-	$ docker build geoserver .
+	$ git clone https://github.com/AnthonyRawlinsUoM/docker-geoserver
+	$ cd docker-geoserver
+	$ ./build.sh
 	
 	$ cd ../lfmc-pipeline
 	$ docker build pipeline .
@@ -35,10 +36,14 @@ First [clone the repos](download).
 
 Must be run **in sequence**
 
-	$ docker run -it mongo
-	$ docker run -it pipeline
-	$ docker run -it geoserver
-	$ docker run -it webserver 
+	$ docker run --name mongodb -d --restart=always \
+           --publish 27017:27017 \
+           --volume /srv/docker/mongodb:/var/lib/mongodb \
+           anthonyrawlinsuom/lfmc-mongodb:latest
+	$ docker run -it anthonyrawlinsuom/lfmc-pipeline
+	$ cd docker-geoserver
+	$ ./run.sh 
+	$ docker run -t anthonyrawlinsuom/lfmc-staging
 
 ## Stopping the containers
 
