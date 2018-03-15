@@ -1,0 +1,1 @@
+docker run -it --rm -v `pwd`:/docs -p 8001:8001 jobandtalent/mkdocs serve -a 0.0.0.0:8001

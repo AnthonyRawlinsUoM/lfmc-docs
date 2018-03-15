@@ -3,43 +3,39 @@
 A single GeoServer instance should be sufficient in most circumstances. Additional WebServer instances can  be deployed via a container management tool like [Kubernetes](https://kubernetes.io/) as required. 
 
 ### Server Requirements
+Any hosting platform capable of running Docker.
+Ideally Kubernetes.
+In a perfect world each container would run on its own VCPU(s).
 
-#### Hardware
+### Requirements
+Docker (http://docker.com/)
 
-#### Software
+### To make the project:
+    $ cd <install-dir>
+    $ make
+    $ make install
 
-## Starting the containers
+### To run the project locally
+    $ docker-compose up
 
-Must be run **in sequence**
+### To run the project on NECTAR.org.au
 
-#### 1. Start the DB Server Instance
-	$ docker run --name mongodb -d --restart=always \
-           --publish 27017:27017 \
-           --volume /srv/docker/mongodb:/var/lib/mongodb \
-           anthonyrawlinsuom/lfmc-mongodb:latest
+TODO - Documentation for...
+- Kubernetes Cluster App
+- Environment YAML
 
-#### 2. Start the Business-logic Pipeline Instance	
-	$ docker run -it anthonyrawlinsuom/lfmc-pipeline
+### Stopping the Project
 
-#### 3. Start the GeoServer Instance
+    $ docker-compose down
 
-	$ cd docker-geoserver
-	$ ./run.sh
-	
-#### Storing map data on the host rather than the GeoServer container.
-##### Docker volumes can be used to persist your data.
-
-	mkdir -p ~/geoserver_data
-	docker run -d -v $HOME/geoserver_data:/opt/geoserver/data_dir anthonyrawlinsuom/lfmc-geoserver
-You need to ensure the geoserver_data directory has sufficient permissions for the docker process to read / write it.
-
-#### 4. Start the Web Application Instance
-	$ docker run -t anthonyrawlinsuom/lfmc-staging
-
-#### Stopping the containers
+See: [Docker Compose Documentation](https://docs.docker.com/compose/reference/overview/#command-options-overview-and-help)
 
 
-#### Restarting the containers
-
-#### Checking the containers PORT numbers
-
+### Ports used by the project
+  - 3000  -> Web Server (express)
+  - 4200  -> Web Server (ng serve)
+  - 8001  -> Documentation Website
+  - 8002  -> LFMC API (REST)
+  - 8080  -> TOMCAT
+  - 9090  -> GeoServer
+  - 27017 -> MongoDB

@@ -9,12 +9,12 @@ Last updated: Monday, 08. January 2018 10:34AM
 [DELWP](https://www.delwp.vic.gov.au/)
 
 ## Requirements
-The complete system requires 4 seperate subsystems. Each subsystem is deployed slightly differently.
+The complete system requires 5 seperate subsystems. Each subsystem is deployed slightly differently.
 
 The basic requirements are:
 
 - [Docker](https://docker.io)
-- [Node](https://nodejs.org)
+- [Kubernetes](https://kubernetes.io/)
 
 ## Support
 
@@ -25,10 +25,12 @@ The basic requirements are:
 
 Each subsystem is maintained in a seperate Github project.
 
+- [LFMC Documentation](https://github.com/AnthonyRawlinsUoM/lfmc-docs)
 - [LFMC WebServer](https://github.com/AnthonyRawlinsUoM/lfmc-staging)
 - [LFMC GeoServer](https://github.com/AnthonyRawlinsUoM/lfmc-geoserver)
 - [LFMC Database](https://github.com/AnthonyRawlinsUoM/lfmc-mongodb)
 - [LFMC Logic](https://github.com/AnthonyRawlinsUoM/lfmc-pipeline)
+- [LFMC API](https://github.com/AnthonyRawlinsUoM/lfmc-api)
 
 Commits will trigger continuous integration with the infrastructure on the [Docker Cloud](https://cloud.docker.com/).
 

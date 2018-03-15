@@ -1,53 +1,72 @@
 # Installation from Docker
 
+### Model Server Instance
+
+	$ docker pull anthonyrawlinsuom/lfmc-api
+
 ### Database Server Instance
 
-	> docker pull anthonyrawlinsuom/lfmc-mongodb
+	$ docker pull anthonyrawlinsuom/lfmc-mongodb
 
-### Web Server Instances
+### Web Server Instance
 
-	> docker pull anthonyrawlinsuom/lfmc-staging
-	> docker pull anthonyrawlinsuom/lfmc-pipeline
+	$ docker pull anthonyrawlinsuom/lfmc-staging
+
+### Logic Server
+	$ docker pull anthonyrawlinsuom/lfmc-pipeline
 
 ### GeoServer Instance
 
-	> docker pull anthonyrawlinsuom/lfmc-geoserver
+	$ docker pull anthonyrawlinsuom/lfmc-geoserver
 	
 # Installation from GitHub
 
-First [clone the repos](download).
+First [clone the main collection repo](download).
 
 ## Building the containers
 
-	$ git clone https://github.com/AnthonyRawlinsUoM/docker-geoserver
-	$ cd docker-geoserver
-	$ ./build.sh
-	
-	$ cd ../lfmc-pipeline
-	$ docker build pipeline .
-	
-	$ cd ../lfmc-mongodb
-	$ docker build mongo .
-	
-	$ cd ../lfmc-staging
-	$ docker build webserver .
+To build all the docker images from source run the following code:
 
-## Starting the containers
+	$ git clone https://github.com/AnthonyRawlinsUoM/LFMC
+	$ cd LFMC
+	$ make clean 
+    $ make && make install
 
-Must be run **in sequence**
+### Building the component containers
 
-	$ docker run --name mongodb -d --restart=always \
-           --publish 27017:27017 \
-           --volume /srv/docker/mongodb:/var/lib/mongodb \
-           anthonyrawlinsuom/lfmc-mongodb:latest
-	$ docker run -it anthonyrawlinsuom/lfmc-pipeline
-	$ cd docker-geoserver
-	$ ./run.sh 
-	$ docker run -t anthonyrawlinsuom/lfmc-staging
+To build a component container use any of the following commands:
+
+    $ make db
+    $ make web
+    $ make docs
+    $ make api
+    $ make geoserver
+    $ make logic
+
+Cleaning the builds
+
+    $ make clean
+
+## Starting the System
+
+	$ docker-compose up
+
+## Viewing the running docker processes
+
+    $ docker ps
 
 ## Stopping the containers
 
-## Restarting the containers
+To stop a container use one of the following commands:
 
-## Checking the containers PORT numbers
+    $ docker stop lfmc_geoserver_1
+    $ docker stop lfmc_api_1
+    
+    etc..
+    
+To stop the whole system:
+
+    Ctrl-C in the active console (*Twice* to force a stop)
+
+## Restarting the containers
 
