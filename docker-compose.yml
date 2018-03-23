@@ -1,0 +1,15 @@
+version: '3.5'
+services:
+    # ReadTheDocs
+    documentation:
+        # image: anthonyrawlinsuom/lfmc-docs
+        image: anthonyrawlinsuom/lfmc-docs
+        command: serve -a 0.0.0.0:8000
+        restart: on-failure
+        networks:
+          - frontend
+        ports:
+          - "8000:8000"
+networks:
+    frontend:
+        driver: bridge
