@@ -13,6 +13,7 @@
 	$ docker pull anthonyrawlinsuom/lfmc-staging
 
 ### Logic Server
+
 	$ docker pull anthonyrawlinsuom/lfmc-pipeline
 
 ### GeoServer Instance
