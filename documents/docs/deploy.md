@@ -15,8 +15,20 @@ Docker (http://docker.com/)
     $ make
     $ make install
 
+#### Developers - To make a version release:
+    $ make release
+
+This auto-increments the version numbers and initiates the build/relase cycle.
+Then enter your GitHub username and password when prompted.
+
+
 ### To run the project locally
     $ docker-compose up
+
+#### Restarting services
+For example to restart the API server just enter:
+
+    $ docker-compose restart api
 
 ### To run the project on NECTAR.org.au
 
