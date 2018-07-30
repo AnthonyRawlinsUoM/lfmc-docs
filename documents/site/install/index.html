@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Installation - Landscape Fuel Moisture Condition</title>
+  
+
+  <link rel="shortcut icon" href="../img/favicon.ico">
+
+  
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="../css/highlight.css">
+
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Installation";
+  </script>
+  
+  <script src="../js/jquery-2.1.1.min.js"></script>
+  <script src="../js/modernizr-2.8.3.min.js"></script>
+  <script type="text/javascript" src="../js/highlight.pack.js"></script>
+  <script src="../js/theme.js"></script> 
+
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href=".." class="icon icon-home"> Landscape Fuel Moisture Condition</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        <ul class="current">
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="..">Home</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../about/">About</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../models/">Models</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../download/">Download</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 current">
+        <a class="current" href="./">Installation</a>
+        
+            <ul>
+            
+                <li class="toctree-l3"><a href="#installation-from-docker">Installation from Docker</a></li>
+                
+                    <li><a class="toctree-l4" href="#model-server-instance">Model Server Instance</a></li>
+                
+                    <li><a class="toctree-l4" href="#database-server-instance">Database Server Instance</a></li>
+                
+                    <li><a class="toctree-l4" href="#web-server-instance">Web Server Instance</a></li>
+                
+                    <li><a class="toctree-l4" href="#logic-server">Logic Server</a></li>
+                
+                    <li><a class="toctree-l4" href="#geoserver-instance">GeoServer Instance</a></li>
+                
+            
+                <li class="toctree-l3"><a href="#installation-from-github">Installation from GitHub</a></li>
+                
+                    <li><a class="toctree-l4" href="#building-the-containers">Building the containers</a></li>
+                
+                    <li><a class="toctree-l4" href="#starting-the-system">Starting the System</a></li>
+                
+                    <li><a class="toctree-l4" href="#viewing-the-running-docker-processes">Viewing the running docker processes</a></li>
+                
+                    <li><a class="toctree-l4" href="#stopping-the-containers">Stopping the containers</a></li>
+                
+                    <li><a class="toctree-l4" href="#restarting-the-containers">Restarting the containers</a></li>
+                
+            
+            </ul>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../config/">Configuration</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../deploy/">Deployment</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../examples/">Examples</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../API/">API</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../release-notes/">Release Notes</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../errors/">Error Reporting</a>
+        
+    </li>
+<li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="..">Landscape Fuel Moisture Condition</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="..">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>Installation</li>
+    <li class="wy-breadcrumbs-aside">
+      
+        
+          <a href="https://github.com/anthonyrawlinsuom/LFMC" class="icon icon-github"> Edit on GitHub</a>
+        
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="installation-from-docker">Installation from Docker</h1>
+<h3 id="model-server-instance">Model Server Instance</h3>
+<pre><code>$ docker pull anthonyrawlinsuom/lfmc-api
+</code></pre>
+<h3 id="database-server-instance">Database Server Instance</h3>
+<pre><code>$ docker pull anthonyrawlinsuom/lfmc-mongodb
+</code></pre>
+<h3 id="web-server-instance">Web Server Instance</h3>
+<pre><code>$ docker pull anthonyrawlinsuom/lfmc-staging
+</code></pre>
+<h3 id="logic-server">Logic Server</h3>
+<pre><code>$ docker pull anthonyrawlinsuom/lfmc-pipeline
+</code></pre>
+<h3 id="geoserver-instance">GeoServer Instance</h3>
+<pre><code>$ docker pull anthonyrawlinsuom/lfmc-geoserver
+</code></pre>
+<h1 id="installation-from-github">Installation from GitHub</h1>
+<p>First <a href="../download">clone the main collection repo</a>.</p>
+<h2 id="building-the-containers">Building the containers</h2>
+<p>To build all the docker images from source run the following code:</p>
+<pre><code>$ git clone https://github.com/AnthonyRawlinsUoM/LFMC
+$ cd LFMC
+$ make clean 
+$ make &amp;&amp; make install
+</code></pre>
+<h3 id="building-the-component-containers">Building the component containers</h3>
+<p>To build a component container use any of the following commands:</p>
+<pre><code>$ make db
+$ make web
+$ make docs
+$ make api
+$ make geoserver
+$ make logic
+</code></pre>
+<p>Or by cd'ing into the module subfolder and running:</p>
+<pre><code>$ make build
+</code></pre>
+<p>Cleaning the builds</p>
+<pre><code>$ make clean
+</code></pre>
+<h2 id="starting-the-system">Starting the System</h2>
+<pre><code>$ docker-compose up
+</code></pre>
+<h2 id="viewing-the-running-docker-processes">Viewing the running docker processes</h2>
+<pre><code>$ docker ps
+</code></pre>
+<h2 id="stopping-the-containers">Stopping the containers</h2>
+<p>To stop a container use one of the following commands:</p>
+<pre><code>$ docker stop lfmc_geoserver_1
+$ docker stop lfmc_api_1
+
+etc..
+</code></pre>
+<p>To stop the whole system:</p>
+<pre><code>Ctrl-C in the active console (*Twice* to force a stop)
+</code></pre>
+<h2 id="restarting-the-containers">Restarting the containers</h2>
+<p>To restart a container (for example after updating some code), run:</p>
+<pre><code>$ docker-compose up -d &lt;container&gt;
+</code></pre>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../config/" class="btn btn-neutral float-right" title="Configuration"/>Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../download/" class="btn btn-neutral" title="Download"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+      <p>Copyright &copy; 2018 University of Melbourne</p>
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+	  
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+<div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+          <a class="icon icon-github" style="float: left; color: #fcfcfc"> GitHub</a>
+      
+      
+        <span><a href="../download/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../config/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+
+</body>
+</html>

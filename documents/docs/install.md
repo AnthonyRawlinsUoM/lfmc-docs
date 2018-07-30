@@ -44,6 +44,10 @@ To build a component container use any of the following commands:
     $ make geoserver
     $ make logic
 
+Or by cd'ing into the module subfolder and running:
+
+    $ make build
+
 Cleaning the builds
 
     $ make clean
@@ -71,3 +75,6 @@ To stop the whole system:
 
 ## Restarting the containers
 
+To restart a container (for example after updating some code), run:
+
+    $ docker-compose up -d <container>

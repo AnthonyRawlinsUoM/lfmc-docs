@@ -1,6 +1,7 @@
 all: build install pull
 	
 build:
+	cd documents && mkdocs build --clean && cd ..
 	@docker build -t anthonyrawlinsuom/lfmc-docs .
 
 install:
