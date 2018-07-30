@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>API - Landscape Fuel Moisture Condition</title>
+  
+
+  <link rel="shortcut icon" href="../img/favicon.ico">
+
+  
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="../css/highlight.css">
+
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "API";
+  </script>
+  
+  <script src="../js/jquery-2.1.1.min.js"></script>
+  <script src="../js/modernizr-2.8.3.min.js"></script>
+  <script type="text/javascript" src="../js/highlight.pack.js"></script>
+  <script src="../js/theme.js"></script> 
+
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href=".." class="icon icon-home"> Landscape Fuel Moisture Condition</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        <ul class="current">
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="..">Home</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../about/">About</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../models/">Models</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../download/">Download</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../install/">Installation</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../config/">Configuration</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../deploy/">Deployment</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../examples/">Examples</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 current">
+        <a class="current" href="./">API</a>
+        
+            <ul>
+            
+                <li class="toctree-l3"><a href="#api">API</a></li>
+                
+                    <li><a class="toctree-l4" href="#building-the-docker-image">Building the Docker Image</a></li>
+                
+                    <li><a class="toctree-l4" href="#running-the-docker-image">Running the Docker Image</a></li>
+                
+                    <li><a class="toctree-l4" href="#monitoring-the-api-process-log-inside-the-container">Monitoring the API Process Log inside the Container</a></li>
+                
+                    <li><a class="toctree-l4" href="#endpoint-examples">Endpoint Examples</a></li>
+                
+            
+            </ul>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../release-notes/">Release Notes</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../errors/">Error Reporting</a>
+        
+    </li>
+<li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="..">Landscape Fuel Moisture Condition</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="..">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>API</li>
+    <li class="wy-breadcrumbs-aside">
+      
+        
+          <a href="https://github.com/anthonyrawlinsuom/LFMC" class="icon icon-github"> Edit on GitHub</a>
+        
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="api">API</h1>
+<p>Intended as a component to the LFMC Server Ecosystem. This is an image that answers Temporal Queries to form Time-series data in JSON format for subsequent analysis of Landscape Fuel Moisture Condition.</p>
+<p>Also collects input data from a variety of sources and starts ingestion tasking on the cluster.
+Processes, Models and TS Data are all exposed through a <em>RESTful API</em>.</p>
+<hr />
+<h3 id="building-the-docker-image">Building the Docker Image</h3>
+<pre><code>$ docker build .
+</code></pre>
+<h3 id="running-the-docker-image">Running the Docker Image</h3>
+<pre><code>$ docker run -it -p 8002:8002 anthonyrawlinsuom/lfmc-api
+</code></pre>
+<h3 id="monitoring-the-api-process-log-inside-the-container">Monitoring the API Process Log inside the Container</h3>
+<pre><code>$ docker run -it -p 8002:8002 anthonyrawlinsuom/lfmc-api -exec /bin/bash /logviewer.sh
+</code></pre>
+<p>The API is intended to be self-documenting and the endpoint can be queried using curl or similar commands. Hug is used for API development and Hug also naturally exposes a WSGI-Compatible API ready for production use.</p>
+<pre><code>$ curl http://api.landscapefuelmoisture.bushfirebehaviour.net.au/v1
+</code></pre>
+<hr />
+<h2 id="endpoint-examples">Endpoint Examples</h2>
+<h3 id="requesting-with-a-basic-spatio-temporal-query-via-post">Requesting with a basic spatio-temporal query via POST</h3>
+<pre><code>curl -H "Content-Type: application/json" \
+ -H "Accept: application/json" \
+ -X POST \
+ -d '{  "start": "YYYYmmdd",
+        "finish": "YYYYmmdd",
+        "models": "&lt;comma separated list of models&gt;", \
+        "weighted": "True", \
+        "geo_json": &lt;valid geojson boundary goes here&gt; }' \
+ http://api.landscapefuelmoisture.bushfirebehaviour.net.au/v1/fuel.json
+</code></pre>
+<blockquote>
+<p>NB in some instances area-weighted masking is inappropriate so you can pass a <strong>False</strong> value to the <em>weighted</em> field to enable binary masking only.</p>
+</blockquote>
+<h3 id="requesting-netcdf-via-post">Requesting NetCDF via POST</h3>
+<pre><code>curl -H "Content-Type: application/json" \
+     -H "Accept: application/x-binary" \
+ -X POST \
+ -d '{  "start": "YYYYmmdd",
+        "finish": "YYYYmmdd",
+        "models": "&lt;comma separated list of models&gt;", \
+        "weighted": "True", \
+        "geo_json": &lt;valid geojson boundary goes here&gt; }' \
+ http://api.landscapefuelmoisture.bushfirebehaviour.net.au/v1/fuel.nc
+</code></pre>
+<blockquote>
+<p>Note the suffix of the request URL <strong>.nc</strong> vs. <strong>.json</strong>.</p>
+</blockquote>
+<h3 id="requesting-an-mp4-via-post">Requesting an MP4 via POST</h3>
+<pre><code>curl -H "Content-Type: application/json" \
+     -H "Accept: video/mp4" \
+ -X POST \
+ -d '{  "start": "YYYYmmdd",
+        "finish": "YYYYmmdd",
+        "models": "&lt;comma separated list of models&gt;", \
+        "weighted": "True", \
+        "geo_json": &lt;valid geojson boundary goes here&gt; }' \
+ http://api.landscapefuelmoisture.bushfirebehaviour.net.au/v1/fuel.mp4
+</code></pre>
+<blockquote>
+<p>Note the <strong>.mp4</strong> suffix.</p>
+</blockquote>
+<h3 id="available-models-and-their-metadata-via-get">Available Models and their metadata via GET</h3>
+<pre><code>$ curl http://api.landscapefuelmoisture.bushfirebehaviour.net.au/v1/models
+</code></pre>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../release-notes/" class="btn btn-neutral float-right" title="Release Notes"/>Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../examples/" class="btn btn-neutral" title="Examples"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+      <p>Copyright &copy; 2018 University of Melbourne</p>
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+	  
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+<div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+          <a class="icon icon-github" style="float: left; color: #fcfcfc"> GitHub</a>
+      
+      
+        <span><a href="../examples/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../release-notes/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+
+</body>
+</html>

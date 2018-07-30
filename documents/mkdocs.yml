@@ -1,12 +1,18 @@
-site_name: Documentation for Landscape Fuel Moisture Condition
+site_name: Landscape Fuel Moisture Condition
 repo_url: https://github.com/anthonyrawlinsuom/LFMC
 docs_dir: ./docs
 use_directory_urls: true
 pages:
    - Home: index.md
    - About: about.md
+   - Models: models.md
    - Download: download.md
    - Installation: install.md
+   - Configuration: config.md
    - Deployment: deploy.md
+   - Examples: examples.md
+   - API: API.md
+   - Release Notes: release-notes.md
+   - Error Reporting: errors.md
 theme: readthedocs
-copyright: 2018 University of Melbourne
+copyright: Copyright &copy; 2018 University of Melbourne
