@@ -4,10 +4,9 @@ A single GeoServer instance should be sufficient in most circumstances. Addition
 
 ### Server Requirements
 Any hosting platform capable of running Docker.
-Ideally Kubernetes.
-In a perfect world each container would run on its own VCPU(s).
 
-### Requirements
+
+### Software Requirements
 
   - [Docker](http://docker.com/)
   - [Docker Compose](https://docs.docker.com/compose/)
@@ -15,26 +14,21 @@ In a perfect world each container would run on its own VCPU(s).
 A brief introduction to Docker [![Docker in 12 Minutes](http://img.youtube.com/vi/YFl2mCHdv24/0.jpg)](https://www.youtube.com/watch?v=YFl2mCHdv24)
 
 
-### To make the project:
-    $ cd <install-dir>
-    $ make
-    $ make install
+### Single-host mode
+	$ docker-compose up &
 
-#### Developers - To make a version release:
-    $ make release
+### Swarm Mode
+	$ docker stack deploy lfmc
 
-This auto-increments the version numbers and initiates the build/relase cycle.
-Then enter your GitHub username and password when prompted.
-
-
-### To run the project locally
-    $ docker-compose up
-
-#### Restarting services
+### Restarting services
 For example to restart the API server just enter:
 
     $ docker-compose restart api
 
+### Scaling
+Services can be scaled to cope with load using the following syntax
+
+	$ docker-compose up --scale api=2
 
 ### Stopping the Project
 
@@ -42,11 +36,3 @@ For example to restart the API server just enter:
 
 See: [Docker Compose Documentation](https://docs.docker.com/compose/reference/overview/#command-options-overview-and-help)
 
-
-### Ports used by the project
-  - 3000  -> Web Server (express, for live site)
-  - 4200  -> Web Server (ng serve, for development site)
-  - 8000  -> Documentation
-  - 8002  -> LFMC API (REST)
-  - 8080  -> GeoServer
-  - 27017 -> MongoDB

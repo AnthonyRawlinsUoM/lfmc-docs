@@ -33,3 +33,5 @@ eg., 1.3.0 --> 2.0.0
 
 ### Version Control
 Modules are controlled by a VERSION file in each top-level directory.
+
+## Local Docker Image Repository
