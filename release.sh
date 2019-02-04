@@ -4,10 +4,10 @@ USERNAME=anthonyrawlinsuom
 IMAGE=lfmc-docs
 
 # ensure we're up to date
-git pull
+# git pull
 
 # bump version
-docker run --rm -v "$PWD":/app treeder/bump release
+docker run --rm -v "$PWD":/app treeder/bump major
 version=`cat VERSION`
 echo "version: $version"
 

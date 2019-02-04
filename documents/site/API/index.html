@@ -72,13 +72,6 @@
           
             <li>
     <li class="toctree-l1 ">
-        <a class="" href="../download/">Download</a>
-        
-    </li>
-<li>
-          
-            <li>
-    <li class="toctree-l1 ">
         <a class="" href="../install/">Installation</a>
         
     </li>
@@ -87,6 +80,13 @@
             <li>
     <li class="toctree-l1 ">
         <a class="" href="../config/">Configuration</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../developers/">Development</a>
         
     </li>
 <li>
@@ -112,12 +112,6 @@
             <ul>
             
                 <li class="toctree-l3"><a href="#api">API</a></li>
-                
-                    <li><a class="toctree-l4" href="#building-the-docker-image">Building the Docker Image</a></li>
-                
-                    <li><a class="toctree-l4" href="#running-the-docker-image">Running the Docker Image</a></li>
-                
-                    <li><a class="toctree-l4" href="#monitoring-the-api-process-log-inside-the-container">Monitoring the API Process Log inside the Container</a></li>
                 
                     <li><a class="toctree-l4" href="#endpoint-examples">Endpoint Examples</a></li>
                 
@@ -181,16 +175,6 @@
 <p>Intended as a component to the LFMC Server Ecosystem. This is an image that answers Temporal Queries to form Time-series data in JSON format for subsequent analysis of Landscape Fuel Moisture Condition.</p>
 <p>Also collects input data from a variety of sources and starts ingestion tasking on the cluster.
 Processes, Models and TS Data are all exposed through a <em>RESTful API</em>.</p>
-<hr />
-<h3 id="building-the-docker-image">Building the Docker Image</h3>
-<pre><code>$ docker build .
-</code></pre>
-<h3 id="running-the-docker-image">Running the Docker Image</h3>
-<pre><code>$ docker run -it -p 8002:8002 anthonyrawlinsuom/lfmc-api
-</code></pre>
-<h3 id="monitoring-the-api-process-log-inside-the-container">Monitoring the API Process Log inside the Container</h3>
-<pre><code>$ docker run -it -p 8002:8002 anthonyrawlinsuom/lfmc-api -exec /bin/bash /logviewer.sh
-</code></pre>
 <p>The API is intended to be self-documenting and the endpoint can be queried using curl or similar commands. Hug is used for API development and Hug also naturally exposes a WSGI-Compatible API ready for production use.</p>
 <pre><code>$ curl http://api.landscapefuelmoisture.bushfirebehaviour.net.au/v1
 </code></pre>
@@ -200,24 +184,21 @@ Processes, Models and TS Data are all exposed through a <em>RESTful API</em>.</p
 <pre><code>curl -H "Content-Type: application/json" \
  -H "Accept: application/json" \
  -X POST \
- -d '{  "start": "YYYYmmdd",
-        "finish": "YYYYmmdd",
+ -d '{  "start": "YYYYmmdd", \
+        "finish": "YYYYmmdd", \
         "models": "&lt;comma separated list of models&gt;", \
-        "weighted": "True", \
         "geo_json": &lt;valid geojson boundary goes here&gt; }' \
  http://api.landscapefuelmoisture.bushfirebehaviour.net.au/v1/fuel.json
 </code></pre>
-<blockquote>
-<p>NB in some instances area-weighted masking is inappropriate so you can pass a <strong>False</strong> value to the <em>weighted</em> field to enable binary masking only.</p>
-</blockquote>
+<p>Example Response</p>
+<blockquote></blockquote>
 <h3 id="requesting-netcdf-via-post">Requesting NetCDF via POST</h3>
 <pre><code>curl -H "Content-Type: application/json" \
      -H "Accept: application/x-binary" \
  -X POST \
- -d '{  "start": "YYYYmmdd",
-        "finish": "YYYYmmdd",
+ -d '{  "start": "YYYYmmdd", \
+        "finish": "YYYYmmdd", \
         "models": "&lt;comma separated list of models&gt;", \
-        "weighted": "True", \
         "geo_json": &lt;valid geojson boundary goes here&gt; }' \
  http://api.landscapefuelmoisture.bushfirebehaviour.net.au/v1/fuel.nc
 </code></pre>
@@ -228,10 +209,9 @@ Processes, Models and TS Data are all exposed through a <em>RESTful API</em>.</p
 <pre><code>curl -H "Content-Type: application/json" \
      -H "Accept: video/mp4" \
  -X POST \
- -d '{  "start": "YYYYmmdd",
-        "finish": "YYYYmmdd",
+ -d '{  "start": "YYYYmmdd", \
+        "finish": "YYYYmmdd", \
         "models": "&lt;comma separated list of models&gt;", \
-        "weighted": "True", \
         "geo_json": &lt;valid geojson boundary goes here&gt; }' \
  http://api.landscapefuelmoisture.bushfirebehaviour.net.au/v1/fuel.mp4
 </code></pre>
@@ -240,6 +220,14 @@ Processes, Models and TS Data are all exposed through a <em>RESTful API</em>.</p
 </blockquote>
 <h3 id="available-models-and-their-metadata-via-get">Available Models and their metadata via GET</h3>
 <pre><code>$ curl http://api.landscapefuelmoisture.bushfirebehaviour.net.au/v1/models
+</code></pre>
+<h3 id="model-codes-names-and-identifiers">Model Codes, Names, and Identifiers</h3>
+<p>Each returns an array</p>
+<pre><code>$ curl http://api.landscapefuelmoisture.bushfirebehaviour.net.au/v1/models/codes
+
+$ curl http://api.landscapefuelmoisture.bushfirebehaviour.net.au/v1/models/names
+
+$ curl http://api.landscapefuelmoisture.bushfirebehaviour.net.au/v1/models/idents
 </code></pre>
               
             </div>

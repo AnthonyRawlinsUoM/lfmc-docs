@@ -72,13 +72,6 @@
           
             <li>
     <li class="toctree-l1 ">
-        <a class="" href="../download/">Download</a>
-        
-    </li>
-<li>
-          
-            <li>
-    <li class="toctree-l1 ">
         <a class="" href="../install/">Installation</a>
         
     </li>
@@ -87,6 +80,13 @@
             <li>
     <li class="toctree-l1 ">
         <a class="" href="../config/">Configuration</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../developers/">Development</a>
         
     </li>
 <li>
@@ -101,15 +101,17 @@
                 
                     <li><a class="toctree-l4" href="#server-requirements">Server Requirements</a></li>
                 
-                    <li><a class="toctree-l4" href="#requirements">Requirements</a></li>
+                    <li><a class="toctree-l4" href="#software-requirements">Software Requirements</a></li>
                 
-                    <li><a class="toctree-l4" href="#to-make-the-project">To make the project:</a></li>
+                    <li><a class="toctree-l4" href="#single-host-mode">Single-host mode</a></li>
                 
-                    <li><a class="toctree-l4" href="#to-run-the-project-locally">To run the project locally</a></li>
+                    <li><a class="toctree-l4" href="#swarm-mode">Swarm Mode</a></li>
+                
+                    <li><a class="toctree-l4" href="#restarting-services">Restarting services</a></li>
+                
+                    <li><a class="toctree-l4" href="#scaling">Scaling</a></li>
                 
                     <li><a class="toctree-l4" href="#stopping-the-project">Stopping the Project</a></li>
-                
-                    <li><a class="toctree-l4" href="#ports-used-by-the-project">Ports used by the project</a></li>
                 
             
             </ul>
@@ -184,45 +186,31 @@
                 <h1 id="deployment">Deployment</h1>
 <p>A single GeoServer instance should be sufficient in most circumstances. Additional WebServer instances can  be deployed via a container management tool like <a href="https://kubernetes.io/">Kubernetes</a> as required, by modifying the docker compose yaml file with a tool such as <a href="https://kubernetes.io/blog/2016/11/kompose-tool-go-from-docker-compose-to-kubernetes/">Kompose</a>.</p>
 <h3 id="server-requirements">Server Requirements</h3>
-<p>Any hosting platform capable of running Docker.
-Ideally Kubernetes.
-In a perfect world each container would run on its own VCPU(s).</p>
-<h3 id="requirements">Requirements</h3>
+<p>Any hosting platform capable of running Docker.</p>
+<h3 id="software-requirements">Software Requirements</h3>
 <ul>
 <li><a href="http://docker.com/">Docker</a></li>
 <li><a href="https://docs.docker.com/compose/">Docker Compose</a></li>
 </ul>
 <p>A brief introduction to Docker <a href="https://www.youtube.com/watch?v=YFl2mCHdv24"><img alt="Docker in 12 Minutes" src="http://img.youtube.com/vi/YFl2mCHdv24/0.jpg" /></a></p>
-<h3 id="to-make-the-project">To make the project:</h3>
-<pre><code>$ cd &lt;install-dir&gt;
-$ make
-$ make install
+<h3 id="single-host-mode">Single-host mode</h3>
+<pre><code>$ docker-compose up &amp;
 </code></pre>
-<h4 id="developers-to-make-a-version-release">Developers - To make a version release:</h4>
-<pre><code>$ make release
+<h3 id="swarm-mode">Swarm Mode</h3>
+<pre><code>$ docker stack deploy lfmc
 </code></pre>
-<p>This auto-increments the version numbers and initiates the build/relase cycle.
-Then enter your GitHub username and password when prompted.</p>
-<h3 id="to-run-the-project-locally">To run the project locally</h3>
-<pre><code>$ docker-compose up
-</code></pre>
-<h4 id="restarting-services">Restarting services</h4>
+<h3 id="restarting-services">Restarting services</h3>
 <p>For example to restart the API server just enter:</p>
 <pre><code>$ docker-compose restart api
+</code></pre>
+<h3 id="scaling">Scaling</h3>
+<p>Services can be scaled to cope with load using the following syntax</p>
+<pre><code>$ docker-compose up --scale api=2
 </code></pre>
 <h3 id="stopping-the-project">Stopping the Project</h3>
 <pre><code>$ docker-compose down
 </code></pre>
 <p>See: <a href="https://docs.docker.com/compose/reference/overview/#command-options-overview-and-help">Docker Compose Documentation</a></p>
-<h3 id="ports-used-by-the-project">Ports used by the project</h3>
-<ul>
-<li>3000  -&gt; Web Server (express, for live site)</li>
-<li>4200  -&gt; Web Server (ng serve, for development site)</li>
-<li>8000  -&gt; Documentation</li>
-<li>8002  -&gt; LFMC API (REST)</li>
-<li>8080  -&gt; GeoServer</li>
-<li>27017 -&gt; MongoDB</li>
-</ul>
               
             </div>
           </div>
@@ -233,7 +221,7 @@ Then enter your GitHub username and password when prompted.</p>
         <a href="../examples/" class="btn btn-neutral float-right" title="Examples"/>Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
-        <a href="../config/" class="btn btn-neutral" title="Configuration"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../developers/" class="btn btn-neutral" title="Development"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   
@@ -263,7 +251,7 @@ Then enter your GitHub username and password when prompted.</p>
           <a class="icon icon-github" style="float: left; color: #fcfcfc"> GitHub</a>
       
       
-        <span><a href="../config/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+        <span><a href="../developers/" style="color: #fcfcfc;">&laquo; Previous</a></span>
       
       
         <span style="margin-left: 15px"><a href="../examples/" style="color: #fcfcfc">Next &raquo;</a></span>

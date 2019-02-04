@@ -72,13 +72,6 @@
           
             <li>
     <li class="toctree-l1 ">
-        <a class="" href="../download/">Download</a>
-        
-    </li>
-<li>
-          
-            <li>
-    <li class="toctree-l1 ">
         <a class="" href="../install/">Installation</a>
         
     </li>
@@ -92,10 +85,21 @@
             
                 <li class="toctree-l3"><a href="#configuration">Configuration</a></li>
                 
-                    <li><a class="toctree-l4" href="#todo">TODO</a></li>
+                    <li><a class="toctree-l4" href="#other-configuration-steps">Other configuration steps</a></li>
+                
+                    <li><a class="toctree-l4" href="#security-recommendations">Security Recommendations</a></li>
+                
+                    <li><a class="toctree-l4" href="#the-environment-file-env">The Environment File (.env)</a></li>
                 
             
             </ul>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../developers/">Development</a>
         
     </li>
 <li>
@@ -171,24 +175,68 @@
           <div role="main">
             <div class="section">
               
-                <h2 id="configuration">Configuration</h2>
+                <h1 id="configuration">Configuration</h1>
 <p>To host the project yourself a few files will need a little configuration.</p>
 <ol>
 <li>
-<p>Firstly signup to <a href="https://auth0.com">Auth0</a> and create an API Access Token.</p>
+<p>Firstly signup to Auth0 and create an API Access Token.</p>
 </li>
 <li>
 <p>Create Enterprise links for OAuth configuration.</p>
 </li>
-<li>Configure database users automatic signup.</li>
+<li>
+<p>Configure database users automatic signup.</p>
+</li>
 </ol>
-<h5 id="todo">TODO</h5>
-<p><strong>Other configuration steps</strong></p>
+<h3 id="other-configuration-steps">Other configuration steps</h3>
 <ol>
-<li>Domain name registration and delegation of wildcard subdomain.</li>
-<li>Dataset placement and PATH configuration.</li>
-<li>Security Essentials, password configuration. </li>
+<li>
+<p>Domain name registration and delegation of wildcard subdomain. For a simple domain-validated solution we recommend Let's Encrypt</p>
+</li>
+<li>
+<p>Dataset placement and ENV configuration. The GeoServer Database must be accessible to the Celery Workers and so sharing it via NFS seems to be a workable solution.</p>
+</li>
+<li>
+<p>Security Essentials, password configuration.</p>
+</li>
 </ol>
+<h3 id="security-recommendations">Security Recommendations</h3>
+<ul>
+<li>IP subnets can be imposed via the NAS to ensure only the Celery Workers can access the data.</li>
+<li>Change the default passwords</li>
+<li>Use HTTPS by registering a wildcard certificate</li>
+</ul>
+<h2 id="the-environment-file-env">The Environment File (.env)</h2>
+<p>Along with the docker-compose.yml file there is a very important hidden file that includes deployment configuration parameters used as Environment Variables by docker when bootstrapping the system.</p>
+<pre><code>LFMC_INSTALL_DIR=/home/arawlins/Documents/LFMC
+FQDN=landscapefuelmoisture.bushfirebehaviour.net.au
+NFS_SERVER=10.101.94.16
+# NFS_SERVER=192.168.10.1
+NFS_PATH=/Pyromancer/Projects/Landscape_Fuel_Moisture_Project/data
+USER=1000
+REGISTRY=127.0.0.1:5000
+</code></pre>
+<h3 id="environment-variables-in-the-env-file">Environment Variables in the '.env' file</h3>
+<p>The .env file contains the following configuration variables:</p>
+<h4 id="lfmc_install_dir">'LFMC_INSTALL_DIR'</h4>
+<p>The LFMC_INSTALL_DIR variable is the absolute path to the parent directory of the source code you cloned from GitHub.</p>
+<h4 id="fqdn">'FQDN'</h4>
+<p>The 'FQDN' variable is the Fully Qualified Domain Name from which you would like to host the LFMC system. This domain name and a wildcard subdomain A record eg., *.landscapefuelmoisture.bushfirebehaviour.net.au must both resolve to the machine that hosts reverse-proxy instance.</p>
+<h4 id="nfs_server">'NFS_SERVER'</h4>
+<p>The 'NFS_SERVER' is the IP address of the Network Attached Storage (NAS) Machine that shares the Datasets via NFS.</p>
+<h4 id="nfs_path">'NFS_PATH'</h4>
+<p>The 'NFS_PATH' variable is the path to the NFS share on the NAS.</p>
+<h4 id="registry">'REGISTRY'</h4>
+<p>This is the url to a docker image registry. You could alternatively set this to any public or private (with additional authentication configuration required) docker registry.</p>
+<h4 id="nfs-configuration">NFS Configuration</h4>
+<p>Docker volumes are shared amongst containers via a central NFS share on NAS. The following is an excerpt from the docker-compose.yml file that shows how NFS parameters are configured to allow simultaneous access from multiple instances of the docker images (eg., api, worker, or pipeline)</p>
+<pre><code>nfs_fuel:
+    driver: local
+    driver_opts:
+    type: nfs
+    o: addr=${NFS_SERVER},nfsvers=4.1,rsize=1048576,wsize=1048576,hard,timeo=600,retrans=2
+    device: ${NFS_SERVER}:${NFS_PATH}/geoserver_data/FuelModels/
+</code></pre>
               
             </div>
           </div>
@@ -196,7 +244,7 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../deploy/" class="btn btn-neutral float-right" title="Deployment"/>Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../developers/" class="btn btn-neutral float-right" title="Development"/>Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
         <a href="../install/" class="btn btn-neutral" title="Installation"><span class="icon icon-circle-arrow-left"></span> Previous</a>
@@ -232,7 +280,7 @@
         <span><a href="../install/" style="color: #fcfcfc;">&laquo; Previous</a></span>
       
       
-        <span style="margin-left: 15px"><a href="../deploy/" style="color: #fcfcfc">Next &raquo;</a></span>
+        <span style="margin-left: 15px"><a href="../developers/" style="color: #fcfcfc">Next &raquo;</a></span>
       
     </span>
 </div>

@@ -66,6 +66,10 @@
                 
                     <li><a class="toctree-l4" href="#system-overview">System Overview</a></li>
                 
+                    <li><a class="toctree-l4" href="#objective">Objective</a></li>
+                
+                    <li><a class="toctree-l4" href="#outcome">Outcome</a></li>
+                
             
             </ul>
         
@@ -81,13 +85,6 @@
           
             <li>
     <li class="toctree-l1 ">
-        <a class="" href="../download/">Download</a>
-        
-    </li>
-<li>
-          
-            <li>
-    <li class="toctree-l1 ">
         <a class="" href="../install/">Installation</a>
         
     </li>
@@ -96,6 +93,13 @@
             <li>
     <li class="toctree-l1 ">
         <a class="" href="../config/">Configuration</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../developers/">Development</a>
         
     </li>
 <li>
@@ -174,7 +178,15 @@
                 <h1 id="the-lfmc-project">The LFMC Project</h1>
 <p>The LFMC Project was developed in collaboration with the <a href="http://www.unimelb.edu.au">University of Melbourne</a>, <a href="http://delwp.vic.gov.au">DELWP Vic.</a>, and the <a href="https://www.bnhcrc.com.au/">BNHCRC</a>.</p>
 <h3 id="system-overview">System Overview</h3>
-<p><img alt="Containers" src="../images/docker-compose.png" /></p>
+<p>The LFMC system is built on a MicroService Architecture for modularity, scalability, security, and flexibility.</p>
+<p><img alt="Containers" src="../images/MicroServices.png" /></p>
+<p>The system draws upon raw data products published by the Bureau of Meterology and the National Computing Infrastructure GeoNetwork, and dynamically generates, stores and publishes a selection of Fuel Moisture Models based on the latest Scientific Research.</p>
+<h3 id="objective">Objective</h3>
+<p>Fuel Moisture Models each utilise specific metrics, spatial and temporal scales, and as such, apply to the environment in different ways. This project attempted to bring these varying models into a single unified platform to provide a means of comparing and contrasting each product across the Victorian (and sometimes Australian) landscape.</p>
+<h3 id="outcome">Outcome</h3>
+<p>Tools were created to allow the fine grained analysis of each model using spatial and temporal search parameters using common formats such as GeoJSON and ESRI Shapefiles.</p>
+<p>The availability of data is determined by the release cycles of the authors including the publishing times of the upstream providers.</p>
+<p>The system has been developed to be 'self-healing' and highly performant. However while it will pro-actively seek missing source datasets, communication errors, permissions, or licensing, could possibly prevent timely delivery of results.</p>
               
             </div>
           </div>

@@ -71,13 +71,6 @@
 <li>
           
             <li>
-    <li class="toctree-l1 ">
-        <a class="" href="../download/">Download</a>
-        
-    </li>
-<li>
-          
-            <li>
     <li class="toctree-l1 current">
         <a class="current" href="./">Installation</a>
         
@@ -85,28 +78,9 @@
             
                 <li class="toctree-l3"><a href="#installation-from-docker">Installation from Docker</a></li>
                 
-                    <li><a class="toctree-l4" href="#model-server-instance">Model Server Instance</a></li>
-                
-                    <li><a class="toctree-l4" href="#database-server-instance">Database Server Instance</a></li>
-                
-                    <li><a class="toctree-l4" href="#web-server-instance">Web Server Instance</a></li>
-                
-                    <li><a class="toctree-l4" href="#logic-server">Logic Server</a></li>
-                
-                    <li><a class="toctree-l4" href="#geoserver-instance">GeoServer Instance</a></li>
-                
-            
-                <li class="toctree-l3"><a href="#installation-from-github">Installation from GitHub</a></li>
+                    <li><a class="toctree-l4" href="#master-project-package">Master Project Package</a></li>
                 
                     <li><a class="toctree-l4" href="#building-the-containers">Building the containers</a></li>
-                
-                    <li><a class="toctree-l4" href="#starting-the-system">Starting the System</a></li>
-                
-                    <li><a class="toctree-l4" href="#viewing-the-running-docker-processes">Viewing the running docker processes</a></li>
-                
-                    <li><a class="toctree-l4" href="#stopping-the-containers">Stopping the containers</a></li>
-                
-                    <li><a class="toctree-l4" href="#restarting-the-containers">Restarting the containers</a></li>
                 
             
             </ul>
@@ -117,6 +91,13 @@
             <li>
     <li class="toctree-l1 ">
         <a class="" href="../config/">Configuration</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../developers/">Development</a>
         
     </li>
 <li>
@@ -193,64 +174,21 @@
             <div class="section">
               
                 <h1 id="installation-from-docker">Installation from Docker</h1>
-<h3 id="model-server-instance">Model Server Instance</h3>
-<pre><code>$ docker pull anthonyrawlinsuom/lfmc-api
-</code></pre>
-<h3 id="database-server-instance">Database Server Instance</h3>
-<pre><code>$ docker pull anthonyrawlinsuom/lfmc-mongodb
-</code></pre>
-<h3 id="web-server-instance">Web Server Instance</h3>
-<pre><code>$ docker pull anthonyrawlinsuom/lfmc-staging
-</code></pre>
-<h3 id="logic-server">Logic Server</h3>
-<pre><code>$ docker pull anthonyrawlinsuom/lfmc-pipeline
-</code></pre>
-<h3 id="geoserver-instance">GeoServer Instance</h3>
+<p>Assumes a Linux OS as the Container Host. LFMC was developed and tested on these OSes.</p>
+<p>Ubuntu Server 16.04 LTS
+Ubuntu Server 18.04 LTS
+Elementary OS 0.4.1 Loki
+Elementary OS 0.5 Juno</p>
 <pre><code>$ docker pull anthonyrawlinsuom/lfmc-geoserver
 </code></pre>
-<h1 id="installation-from-github">Installation from GitHub</h1>
-<p>First <a href="../download">clone the main collection repo</a>.</p>
-<h2 id="building-the-containers">Building the containers</h2>
+<h3 id="master-project-package">Master Project Package</h3>
+<p>The components of the system are submodules of a master GitHub project. In order to maintain confidentiality, the webserver package is private.</p>
+<h3 id="building-the-containers">Building the containers</h3>
+<p>See: configuration</p>
 <p>To build all the docker images from source run the following code:</p>
 <pre><code>$ git clone https://github.com/AnthonyRawlinsUoM/LFMC
 $ cd LFMC
-$ make clean 
-$ make &amp;&amp; make install
-</code></pre>
-<h3 id="building-the-component-containers">Building the component containers</h3>
-<p>To build a component container use any of the following commands:</p>
-<pre><code>$ make db
-$ make web
-$ make docs
-$ make api
-$ make geoserver
-$ make logic
-</code></pre>
-<p>Or by cd'ing into the module subfolder and running:</p>
-<pre><code>$ make build
-</code></pre>
-<p>Cleaning the builds</p>
-<pre><code>$ make clean
-</code></pre>
-<h2 id="starting-the-system">Starting the System</h2>
-<pre><code>$ docker-compose up
-</code></pre>
-<h2 id="viewing-the-running-docker-processes">Viewing the running docker processes</h2>
-<pre><code>$ docker ps
-</code></pre>
-<h2 id="stopping-the-containers">Stopping the containers</h2>
-<p>To stop a container use one of the following commands:</p>
-<pre><code>$ docker stop lfmc_geoserver_1
-$ docker stop lfmc_api_1
-
-etc..
-</code></pre>
-<p>To stop the whole system:</p>
-<pre><code>Ctrl-C in the active console (*Twice* to force a stop)
-</code></pre>
-<h2 id="restarting-the-containers">Restarting the containers</h2>
-<p>To restart a container (for example after updating some code), run:</p>
-<pre><code>$ docker-compose up -d &lt;container&gt;
+$ make build
 </code></pre>
               
             </div>
@@ -262,7 +200,7 @@ etc..
         <a href="../config/" class="btn btn-neutral float-right" title="Configuration"/>Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
-        <a href="../download/" class="btn btn-neutral" title="Download"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../models/" class="btn btn-neutral" title="Models"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   
@@ -292,7 +230,7 @@ etc..
           <a class="icon icon-github" style="float: left; color: #fcfcfc"> GitHub</a>
       
       
-        <span><a href="../download/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+        <span><a href="../models/" style="color: #fcfcfc;">&laquo; Previous</a></span>
       
       
         <span style="margin-left: 15px"><a href="../config/" style="color: #fcfcfc">Next &raquo;</a></span>

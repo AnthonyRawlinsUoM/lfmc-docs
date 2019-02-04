@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Download - Landscape Fuel Moisture Condition</title>
+  <title>Development - Landscape Fuel Moisture Condition</title>
   
 
   <link rel="shortcut icon" href="../img/favicon.ico">
@@ -20,7 +20,7 @@
   
   <script>
     // Current page data
-    var mkdocs_page_name = "Download";
+    var mkdocs_page_name = "Development";
   </script>
   
   <script src="../js/jquery-2.1.1.min.js"></script>
@@ -71,20 +71,6 @@
 <li>
           
             <li>
-    <li class="toctree-l1 current">
-        <a class="current" href="./">Download</a>
-        
-            <ul>
-            
-                <li class="toctree-l3"><a href="#download">Download</a></li>
-                
-            
-            </ul>
-        
-    </li>
-<li>
-          
-            <li>
     <li class="toctree-l1 ">
         <a class="" href="../install/">Installation</a>
         
@@ -94,6 +80,28 @@
             <li>
     <li class="toctree-l1 ">
         <a class="" href="../config/">Configuration</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 current">
+        <a class="current" href="./">Development</a>
+        
+            <ul>
+            
+                <li class="toctree-l3"><a href="#development">Development</a></li>
+                
+                    <li><a class="toctree-l4" href="#build-tools">Build Tools</a></li>
+                
+                    <li><a class="toctree-l4" href="#test-bump-patch-release-builds">Test, Bump, Patch & Release builds</a></li>
+                
+                    <li><a class="toctree-l4" href="#version-control">Version Control</a></li>
+                
+                    <li><a class="toctree-l4" href="#local-docker-image-repository">Local Docker Image Repository</a></li>
+                
+            
+            </ul>
         
     </li>
 <li>
@@ -155,7 +163,7 @@
     
       
     
-    <li>Download</li>
+    <li>Development</li>
     <li class="wy-breadcrumbs-aside">
       
         
@@ -169,11 +177,36 @@
           <div role="main">
             <div class="section">
               
-                <h1 id="download">Download</h1>
-<p>To get the software source download a zip, or clone the repository using:</p>
-<pre><code>$ git clone https://github.com/AnthonyRawlinsUoM/LFMC.git
+                <h1 id="development">Development</h1>
+<h3 id="build-tools">Build Tools</h3>
+<ul>
+<li>Make</li>
+<li>Docker</li>
+<li>docker-compose</li>
+<li>Angular</li>
+<li>Node</li>
+</ul>
+<p>Modules can be built using the supplied Makefiles.</p>
+<h3 id="test-bump-patch-release-builds">Test, Bump, Patch &amp; Release builds</h3>
+<p>Pre-configured makefiles allow you to contribute version number releases in the following standardised way.</p>
+<h4 id="to-make-a-test-release">To make a test release</h4>
+<p>Version number remains the same
+eg., 1.2.3 --&gt; 1.2.3</p>
+<h4 id="to-make-a-bump-release">To make a bump release</h4>
+<p>eg., 1.2.3 --&gt; 1.2.4</p>
+<pre><code>$ make bump
 </code></pre>
-<p>Submodules are available individually, but little is to be gained running them independantly.</p>
+<h4 id="to-make-a-patch-release">To make a patch release</h4>
+<p>eg., 1.2.4 --&gt; 1.3.0</p>
+<pre><code>$ make patch
+</code></pre>
+<h4 id="to-make-a-release-version">To make a release version</h4>
+<p>eg., 1.3.0 --&gt; 2.0.0</p>
+<pre><code>$ make release
+</code></pre>
+<h3 id="version-control">Version Control</h3>
+<p>Modules are controlled by a VERSION file in each top-level directory.</p>
+<h2 id="local-docker-image-repository">Local Docker Image Repository</h2>
               
             </div>
           </div>
@@ -181,10 +214,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../install/" class="btn btn-neutral float-right" title="Installation"/>Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../deploy/" class="btn btn-neutral float-right" title="Deployment"/>Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
-        <a href="../models/" class="btn btn-neutral" title="Models"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../config/" class="btn btn-neutral" title="Configuration"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   
@@ -214,10 +247,10 @@
           <a class="icon icon-github" style="float: left; color: #fcfcfc"> GitHub</a>
       
       
-        <span><a href="../models/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+        <span><a href="../config/" style="color: #fcfcfc;">&laquo; Previous</a></span>
       
       
-        <span style="margin-left: 15px"><a href="../install/" style="color: #fcfcfc">Next &raquo;</a></span>
+        <span style="margin-left: 15px"><a href="../deploy/" style="color: #fcfcfc">Next &raquo;</a></span>
       
     </span>
 </div>
