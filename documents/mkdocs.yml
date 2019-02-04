@@ -6,9 +6,9 @@ pages:
    - Home: index.md
    - About: about.md
    - Models: models.md
-   - Download: download.md
    - Installation: install.md
    - Configuration: config.md
+   - Development: developers.md
    - Deployment: deploy.md
    - Examples: examples.md
    - API: API.md
