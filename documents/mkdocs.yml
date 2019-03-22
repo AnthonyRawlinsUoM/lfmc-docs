@@ -2,17 +2,52 @@ site_name: Landscape Fuel Moisture Condition
 repo_url: https://github.com/anthonyrawlinsuom/LFMC
 docs_dir: ./docs
 use_directory_urls: true
-pages:
-   - Home: index.md
-   - About: about.md
-   - Models: models.md
-   - Installation: install.md
-   - Configuration: config.md
-   - Development: developers.md
-   - Deployment: deploy.md
-   - Examples: examples.md
-   - API: API.md
-   - Release Notes: release-notes.md
-   - Error Reporting: errors.md
+nav:
+  - Home: index.md
+  - Project:
+      - About the LFMC Project: about.md
+      - The Indexes: indexes.md
+      - The Models: models.md
+
+  - Usage:
+      - Using the site: examples.md
+      - If you encounter an error: errors.md
+  
+  - Development:
+      - API: API.md
+      - Configuration: config.md
+      - Contributors: developers.md
+      - Installation: install.md
+      - License (LGPLv3): license.md
+      - Release Notes: release-notes.md
+      
+  - Deployment:
+      - Swarm: swarm.md
+      - Single Host: single.md
+      
+  - Management:
+      - Dashboards: dashboards.md
+      - GeoServer: geoserver.md
+      - Portainer: portainer.md
+      - Swarmpit: swarmpit.md
+      - Traefik: traefik.md
+      
 theme: readthedocs
+# Configuration
+# theme:
+#   name: 'material'
+#   language: 'en'
+#   palette:
+#     primary: 'indigo'
+#     accent: 'indigo'
+#   font:
+#     text: 'Roboto'
+#     code: 'Roboto Mono'
+# # Extensions
+# markdown_extensions:
+#   - admonition
+#   - codehilite:
+#       guess_lang: false
+#   - toc:
+#       permalink: true
 copyright: Copyright &copy; 2018 University of Melbourne

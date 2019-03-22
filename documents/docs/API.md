@@ -10,8 +10,7 @@ The API is intended to be self-documenting and the endpoint can be queried using
     $ curl http://api.landscapefuelmoisture.bushfirebehaviour.net.au/v1
 ---
 
-Endpoint Examples
------------------
+## Endpoint Examples
 
 ### Requesting with a basic spatio-temporal query via POST
 
@@ -24,12 +23,7 @@ Endpoint Examples
 	    	"geo_json": <valid geojson boundary goes here> }' \
 	 http://api.landscapefuelmoisture.bushfirebehaviour.net.au/v1/fuel.json
 
-Example Response
-> 
-> 
-> 
-
-### Requesting NetCDF via POST
+#### Requesting NetCDF via POST
 
     curl -H "Content-Type: application/json" \
          -H "Accept: application/x-binary" \
@@ -42,7 +36,7 @@ Example Response
 
 > Note the suffix of the request URL **.nc** vs. **.json**.
 
-### Requesting an MP4 via POST
+<!-- #### Requesting an MP4 via POST
 
     curl -H "Content-Type: application/json" \
          -H "Accept: video/mp4" \
@@ -53,7 +47,7 @@ Example Response
 	    	"geo_json": <valid geojson boundary goes here> }' \
 	 http://api.landscapefuelmoisture.bushfirebehaviour.net.au/v1/fuel.mp4
 	 
-> Note the **.mp4** suffix.
+> Note the **.mp4** suffix. -->
 
 ### Available Models and their metadata via GET
 
@@ -63,9 +57,7 @@ Example Response
 Each returns an array
 
     $ curl http://api.landscapefuelmoisture.bushfirebehaviour.net.au/v1/models/codes
-    
+
     $ curl http://api.landscapefuelmoisture.bushfirebehaviour.net.au/v1/models/names
-    
+
     $ curl http://api.landscapefuelmoisture.bushfirebehaviour.net.au/v1/models/idents
-    
-    

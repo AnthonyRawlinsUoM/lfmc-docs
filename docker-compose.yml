@@ -4,12 +4,14 @@ services:
     documentation:
         # image: anthonyrawlinsuom/lfmc-docs
         image: anthonyrawlinsuom/lfmc-docs
-        command: serve -a 0.0.0.0:8000
+        command: serve -a 0.0.0.0:8800
         restart: on-failure
         networks:
           - frontend
         ports:
-          - "8000:8000"
+          - "8800:8800"
+        volumes:
+          - ./documents:/documents
 networks:
     frontend:
         driver: bridge
