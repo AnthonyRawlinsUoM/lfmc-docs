@@ -1,12 +1,8 @@
 # LFMC v3.1.2
 
+The [School of Ecosystem and Forest Sciences (SEFS)](https://ecosystemforest.unimelb.edu.au/) from the [University of Melbourne (UOM)](http://www.unimelb.edu.au) was engaged by the [Department of Environment, Land, Water and Planning (DELWP)](http://delwp.vic.gov.au) to synthesise existing LFMC research into a single operational system for evaluating landscape fuel moisture condition. The project will represent the best available science in Australia in a single operational system. Outputs of this project, and their integration into state-agencies’ bushfire prediction and fuel monitoring systems, will greatly improve Victoria’s ability to prevent, prepare and respond to bushfires.
+
 **PLEASE NOTE: DOCUMENTATION IS UNDER DEVELOPMENT**
-
-Over the past four years, across Victoria and New South Wales, a substantial sum has been invested in research on landscape moisture assessment, dynamic moisture modelling and ground-based sensor moisture calibration. While this investment has resulted in a substantial improvement in the capacity to predict the Landscape Fuel Moisture condition (LFMC), these improvements have only occasionally been translated into operational use by the relevant agencies.  As a consequence, agencies have not benefited fully from their research investment.  An improved understanding of LFMC can have application in fire suppression, risk planning and emergency management, so there are tangible benefits to optimising the value of research done.  
-
-## Audience
-
-[DELWP](https://www.delwp.vic.gov.au/)
 
 ---
 

@@ -26,8 +26,8 @@ Use the Polygon Tool to draw a selection.
 
 Polygons are always enclosed when drawn using the polygon tool. An Error will be reported if the polygon was not fully enclosed when imported.
 
-> **To avoid weird behaviour when drawing.**
-> Turn **OFF** *Snapping to Boundary*
+<!-- > **To avoid weird behaviour when drawing.**
+> Turn **OFF** *Snapping to Boundary* -->
 
 ![Snap to Boundary](images/snapping.png)
 

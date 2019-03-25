@@ -3,29 +3,31 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
+  <title>Examples - Landscape Fuel Moisture Condition</title>
   
+
   <link rel="shortcut icon" href="../img/favicon.ico">
-  <title>Using the site - Landscape Fuel Moisture Condition</title>
+
+  
   <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
 
   <link rel="stylesheet" href="../css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../css/theme_extra.css" type="text/css" />
-  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+  <link rel="stylesheet" href="../css/highlight.css">
+
   
   <script>
     // Current page data
-    var mkdocs_page_name = "Using the site";
-    var mkdocs_page_input_path = "examples.md";
-    var mkdocs_page_url = null;
+    var mkdocs_page_name = "Examples";
   </script>
   
-  <script src="../js/jquery-2.1.1.min.js" defer></script>
-  <script src="../js/modernizr-2.8.3.min.js" defer></script>
-  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
-  <script>hljs.initHighlightingOnLoad();</script> 
+  <script src="../js/jquery-2.1.1.min.js"></script>
+  <script src="../js/modernizr-2.8.3.min.js"></script>
+  <script type="text/javascript" src="../js/highlight.pack.js"></script>
+  <script src="../js/theme.js"></script> 
+
   
 </head>
 
@@ -39,150 +41,223 @@
         <a href=".." class="icon icon-home"> Landscape Fuel Moisture Condition</a>
         <div role="search">
   <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+    <input type="text" name="q" placeholder="Search docs" />
   </form>
 </div>
       </div>
 
       <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
-	<ul class="current">
-	  
+        <ul class="current">
           
-            <li class="toctree-l1">
-		
-    <a class="" href="..">Home</a>
-	    </li>
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="..">Home</a>
+        
+    </li>
+<li>
           
-            <li class="toctree-l1">
-		
-    <span class="caption-text">Project</span>
-    <ul class="subnav">
-                <li class="">
-                    
-    <a class="" href="../about/">About the LFMC Project</a>
-                </li>
-                <li class="">
-                    
-    <a class="" href="../indexes/">The Indexes</a>
-                </li>
-                <li class="">
-                    
-    <a class="" href="../models/">The Models</a>
-                </li>
-    </ul>
-	    </li>
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../API/">API</a>
+        
+    </li>
+<li>
           
-            <li class="toctree-l1">
-		
-    <span class="caption-text">Usage</span>
-    <ul class="subnav">
-                <li class=" current">
-                    
-    <a class="current" href="./">Using the site</a>
-    <ul class="subnav">
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../about/">About</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../awra/">Awra</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../conceptual/">Conceptual</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../config/">Config</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../dashboards/">Dashboards</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../deploy/">Deploy</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../developers/">Developers</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../disclaimer/">Disclaimer</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../errors/">Errors</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 current">
+        <a class="current" href="./">Examples</a>
+        
+            <ul>
             
-    <li class="toctree-l3"><a href="#making-a-query">Making a query</a></li>
-    
-        <ul>
+                <li class="toctree-l3"><a href="#making-a-query">Making a query</a></li>
+                
+                    <li><a class="toctree-l4" href="#model-selection">Model Selection</a></li>
+                
+                    <li><a class="toctree-l4" href="#spatial-selections">Spatial Selections</a></li>
+                
+                    <li><a class="toctree-l4" href="#important-note-on-file-storage-and-persistence">Important note on file storage and persistence</a></li>
+                
+                    <li><a class="toctree-l4" href="#temporal-selections">Temporal Selections</a></li>
+                
+                    <li><a class="toctree-l4" href="#temporal-results">Temporal Results</a></li>
+                
+                    <li><a class="toctree-l4" href="#some-important-caveats">Some Important caveats</a></li>
+                
+                    <li><a class="toctree-l4" href="#geo-location">Geo-location</a></li>
+                
+            
+            </ul>
         
-            <li><a class="toctree-l4" href="#model-selection">Model Selection</a></li>
-        
-            <li><a class="toctree-l4" href="#spatial-selections">Spatial Selections</a></li>
-        
-            <li><a class="toctree-l4" href="#important-note-on-file-storage-and-persistence">Important note on file storage and persistence</a></li>
-        
-            <li><a class="toctree-l4" href="#temporal-selections">Temporal Selections</a></li>
-        
-            <li><a class="toctree-l4" href="#temporal-results">Temporal Results</a></li>
-        
-            <li><a class="toctree-l4" href="#some-important-caveats">Some Important caveats</a></li>
-        
-            <li><a class="toctree-l4" href="#geo-location">Geo-location</a></li>
-        
-        </ul>
-    
-
-    </ul>
-                </li>
-                <li class="">
-                    
-    <a class="" href="../errors/">If you encounter an error</a>
-                </li>
-    </ul>
-	    </li>
+    </li>
+<li>
           
-            <li class="toctree-l1">
-		
-    <span class="caption-text">Development</span>
-    <ul class="subnav">
-                <li class="">
-                    
-    <a class="" href="../API/">API</a>
-                </li>
-                <li class="">
-                    
-    <a class="" href="../config/">Configuration</a>
-                </li>
-                <li class="">
-                    
-    <a class="" href="../developers/">Contributors</a>
-                </li>
-                <li class="">
-                    
-    <a class="" href="../install/">Installation</a>
-                </li>
-                <li class="">
-                    
-    <a class="" href="../license/">License (LGPLv3)</a>
-                </li>
-                <li class="">
-                    
-    <a class="" href="../release-notes/">Release Notes</a>
-                </li>
-    </ul>
-	    </li>
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../geoserver/">Geoserver</a>
+        
+    </li>
+<li>
           
-            <li class="toctree-l1">
-		
-    <span class="caption-text">Deployment</span>
-    <ul class="subnav">
-                <li class="">
-                    
-    <a class="" href="../swarm/">Swarm</a>
-                </li>
-                <li class="">
-                    
-    <a class="" href="../single/">Single Host</a>
-                </li>
-    </ul>
-	    </li>
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../indices/">Indices</a>
+        
+    </li>
+<li>
           
-            <li class="toctree-l1">
-		
-    <span class="caption-text">Management</span>
-    <ul class="subnav">
-                <li class="">
-                    
-    <a class="" href="../dashboards/">Dashboards</a>
-                </li>
-                <li class="">
-                    
-    <a class="" href="../geoserver/">GeoServer</a>
-                </li>
-                <li class="">
-                    
-    <a class="" href="../portainer/">Portainer</a>
-                </li>
-                <li class="">
-                    
-    <a class="" href="../swarmpit/">Swarmpit</a>
-                </li>
-                <li class="">
-                    
-    <a class="" href="../traefik/">Traefik</a>
-                </li>
-    </ul>
-	    </li>
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../install/">Install</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../jasmin/">Jasmin</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../license/">License</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../models/">Models</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../nolan/">Nolan</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../portainer/">Portainer</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../release-notes/">Release notes</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../single/">Single</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../swarm/">Swarm</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../swarmpit/">Swarmpit</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../thredds/">Thredds</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../traefik/">Traefik</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../yebra/">Yebra</a>
+        
+    </li>
+<li>
           
         </ul>
       </div>
@@ -205,16 +280,13 @@
     <li><a href="..">Docs</a> &raquo;</li>
     
       
-        
-          <li>Usage &raquo;</li>
-        
-      
     
-    <li>Using the site</li>
+    <li>Examples</li>
     <li class="wy-breadcrumbs-aside">
       
-        <a href="https://github.com/anthonyrawlinsuom/LFMC/edit/master/docs/examples.md"
-          class="icon icon-github"> Edit on GitHub</a>
+        
+          <a href="https://github.com/anthonyrawlinsuom/LFMC" class="icon icon-github"> Edit on GitHub</a>
+        
       
     </li>
   </ul>
@@ -241,10 +313,9 @@
 <p>Use the Polygon Tool to draw a selection.</p>
 <p><img alt="Polygon Tool Drawing" src="../images/polygon_selection.png" /></p>
 <p>Polygons are always enclosed when drawn using the polygon tool. An Error will be reported if the polygon was not fully enclosed when imported.</p>
-<blockquote>
-<p><strong>To avoid weird behaviour when drawing.</strong>
-Turn <strong>OFF</strong> <em>Snapping to Boundary</em></p>
-</blockquote>
+<!-- > **To avoid weird behaviour when drawing.**
+> Turn **OFF** *Snapping to Boundary* -->
+
 <p><img alt="Snap to Boundary" src="../images/snapping.png" /></p>
 <h4 id="loading-a-geojson-file">Loading a GeoJSON File</h4>
 <p>GeoJSON can be copy/pasted into the SPACE window. Pasting new data will overwrite the current spatial selection but will not be saved until clicking the Orange Pencil (Save) Icon.</p>
@@ -291,10 +362,10 @@ Temporal Resolution</p>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../errors/" class="btn btn-neutral float-right" title="If you encounter an error">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../geoserver/" class="btn btn-neutral float-right" title="Geoserver"/>Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
-        <a href="../models/" class="btn btn-neutral" title="The Models"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../errors/" class="btn btn-neutral" title="Errors"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   
@@ -310,7 +381,7 @@ Temporal Resolution</p>
 
   Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
 </footer>
-      
+	  
         </div>
       </div>
 
@@ -318,22 +389,19 @@ Temporal Resolution</p>
 
   </div>
 
-  <div class="rst-versions" role="note" style="cursor: pointer">
+<div class="rst-versions" role="note" style="cursor: pointer">
     <span class="rst-current-version" data-toggle="rst-current-version">
       
-          <a href="https://github.com/anthonyrawlinsuom/LFMC/" class="fa fa-github" style="float: left; color: #fcfcfc"> GitHub</a>
+          <a class="icon icon-github" style="float: left; color: #fcfcfc"> GitHub</a>
       
       
-        <span><a href="../models/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+        <span><a href="../errors/" style="color: #fcfcfc;">&laquo; Previous</a></span>
       
       
-        <span style="margin-left: 15px"><a href="../errors/" style="color: #fcfcfc">Next &raquo;</a></span>
+        <span style="margin-left: 15px"><a href="../geoserver/" style="color: #fcfcfc">Next &raquo;</a></span>
       
     </span>
 </div>
-    <script>var base_url = '..';</script>
-    <script src="../js/theme.js" defer></script>
-      <script src="../search/main.js" defer></script>
 
 </body>
 </html>

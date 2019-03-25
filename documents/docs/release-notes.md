@@ -17,9 +17,3 @@ Current version numbers are as follows:
 | LFMC SimplifyR         | [lfmc-simplifyr](https://github.com/AnthonyRawlinsUoM/lfmc-simplifyr)            | [lfmc-simplifyr](https://hub.docker.com/r/anthonyrawlinsuom/lfmc-simplifyr/)            | v1.0.0  | R |
 | LFMC TransformR         | [lfmc-transformr](https://github.com/AnthonyRawlinsUoM/lfmc-transformr)            | [lfmc-transformr](https://hub.docker.com/r/anthonyrawlinsuom/lfmc-transformr/)            | v1.0.0  | R |
 | LFMC Cache         | [lfmc-caching](https://github.com/AnthonyRawlinsUoM/lfmc-caching)            | [lfmc-caching](https://hub.docker.com/r/anthonyrawlinsuom/lfmc-caching/)            | v1.0.0  | REDIS |
-
-### Additional Management Containers
-
- - Portainer
- - Swarmpit
- - Traefik

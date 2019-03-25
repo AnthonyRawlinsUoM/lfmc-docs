@@ -4,14 +4,14 @@
 
 | Strata       | Model(s)               |
 | ------------ | ---------------------- |
-| Canopy       | LFMC, LVMC, FFDI       |
-| Sub-canopy   | LFMC, LVMC, FFDI       |
-| Elevated     | LFMC, LVMC, FFDI       |
-| Near-surface | LFMC, LVMC, DFMC, GFDI |
-| Surface      | DFMC, JASMIN, GFDI, DF |
-| Root zone    | AWRA-L                 |
-| Upper soil   | AWRA-L                 |
-| Deep soil    | AWRA-L                 |
+| Canopy       | [LFMC](nolan.md), [LVMC](yebra.md), [FFDI](indices.md)       |
+| Sub-canopy   | [LFMC](nolan.md), [LVMC](yebra.md), [FFDI](indices.md)       |
+| Elevated     | [LFMC](nolan.md), [LVMC](yebra.md), [FFDI](indices.md)       |
+| Near-surface | [LFMC](nolan.md), [LVMC](yebra.md), [DFMC](nolan.md), [GFDI](indices.md) |
+| Surface      | [DFMC](nolan.md), [JASMIN](), [GFDI](indices.md), [DF](indices.md), [Curing](indces.md) |
+| Root zone    | [AWRA-L](awra.md)                |
+| Upper soil   | [AWRA-L](awra.md)                |
+| Deep soil    | [AWRA-L](awra.md)                |
 
 
 See: [Model Descriptions](http://landscapefuelmoisture.bushfirebehaviour.net.au/models) and [metadata](http://api.landscapefuelmoisture.bushfirebehaviour.net.au/v1/models)

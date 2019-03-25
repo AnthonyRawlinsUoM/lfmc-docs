@@ -6,7 +6,9 @@ nav:
   - Home: index.md
   - Project:
       - About the LFMC Project: about.md
-      - The Indexes: indexes.md
+
+  - Models:
+      - The Indexes: indices.md
       - The Models: models.md
 
   - Usage:
@@ -51,3 +53,4 @@ theme: readthedocs
 #   - toc:
 #       permalink: true
 copyright: Copyright &copy; 2018 University of Melbourne
+disclaimer: disclaimer.md
