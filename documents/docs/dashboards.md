@@ -14,5 +14,4 @@ The following dashboards can be used to monitor, administer and configure the Sy
  - [SimplifyR](https://simplifyr.landscapefuelmoisture.bushfirebehaviour.net.au)
  - [TransformR](https://transformr.landscapefuelmoisture.bushfirebehaviour.net.au)
 
-
 ---

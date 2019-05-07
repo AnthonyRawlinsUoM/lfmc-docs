@@ -159,6 +159,8 @@
                 
                     <li><a class="toctree-l4" href="#building-the-containers">Building the containers</a></li>
                 
+                    <li><a class="toctree-l4" href="#compatability">Compatability</a></li>
+                
             
             </ul>
         
@@ -286,13 +288,7 @@
             <div class="section">
               
                 <h1 id="installation-from-docker">Installation from Docker</h1>
-<p>Assumes a Linux OS as the Container Host. LFMC was developed and tested on the following platforms:</p>
-<ul>
-<li>Ubuntu Server 16.04 LTS</li>
-<li>Ubuntu Server 18.04 LTS</li>
-<li>Elementary OS 0.4.1 Loki</li>
-<li>Elementary OS 0.5 Juno</li>
-</ul>
+<p>Assumes a Linux OS as the Container Host. </p>
 <p>To pull the container from DockerHub:</p>
 <pre><code>$ docker pull anthonyrawlinsuom/lfmc
 </code></pre>
@@ -304,7 +300,44 @@
 <p>To install from source, run the following code:</p>
 <pre><code>$ git clone https://github.com/AnthonyRawlinsUoM/LFMC
 $ cd LFMC
+$ make build
 </code></pre>
+<h3 id="compatability">Compatability</h3>
+<p>LFMC was developed and tested on the following platforms:</p>
+<table>
+<thead>
+<tr>
+<th align="left">OS</th>
+<th align="left">Versions</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">Ubuntu Server</td>
+<td align="left">16.04 LTS</td>
+</tr>
+<tr>
+<td align="left">Ubuntu Server</td>
+<td align="left">18.04 LTS</td>
+</tr>
+<tr>
+<td align="left">Ubuntu Desktop</td>
+<td align="left">16.04 LTS</td>
+</tr>
+<tr>
+<td align="left">Ubuntu Desktop</td>
+<td align="left">18.04 LTS</td>
+</tr>
+<tr>
+<td align="left">Elementary OS</td>
+<td align="left">0.4.1 Loki</td>
+</tr>
+<tr>
+<td align="left">Elementary OS</td>
+<td align="left">0.5 Juno</td>
+</tr>
+</tbody>
+</table>
               
             </div>
           </div>

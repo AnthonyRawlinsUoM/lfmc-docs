@@ -490,145 +490,44 @@
 <td align="left"><strong>Design intent</strong></td>
 <td align="left"></td>
 </tr>
-<tr>
-<td align="left">---</td>
-<td align="left"></td>
-</tr>
-<tr>
-<td align="left"><style></td>
-<td align="left"></td>
-</tr>
-<tr>
-<td align="left">@media all {</td>
-<td align="left"></td>
-</tr>
-<tr>
-<td align="left">.apa,     .apa ul,     .apa ol,     .apa dl,</td>
-<td align="left"></td>
-</tr>
-<tr>
-<td align="left">.ref-apa, .ref-apa ul, .ref-apa ol, .ref-apa dl,</td>
-<td align="left"></td>
-</tr>
-<tr>
-<td align="left">.apa-ref, .apa-ref ul, .apa-ref ol, .apa-ref dl,</td>
-<td align="left"></td>
-</tr>
-<tr>
-<td align="left">.refapa,  .refapa ul,  .refapa ol,  .refapa dl,</td>
-<td align="left"></td>
-</tr>
-<tr>
-<td align="left">.aparef,  .aparef ul,  .aparef ol,  .aparef dl{</td>
-<td align="left"></td>
-</tr>
-<tr>
-<td align="left">padding-left: 0;margin-left: 0;</td>
-<td align="left"></td>
-</tr>
-<tr>
-<td align="left">}</td>
-<td align="left"></td>
-</tr>
-<tr>
-<td align="left">.apa li,</td>
-<td align="left"></td>
-</tr>
-<tr>
-<td align="left">.ref-apa li,</td>
-<td align="left"></td>
-</tr>
-<tr>
-<td align="left">.refapa li,</td>
-<td align="left"></td>
-</tr>
-<tr>
-<td align="left">.apa-ref li,</td>
-<td align="left"></td>
-</tr>
-<tr>
-<td align="left">.aparef li{</td>
-<td align="left"></td>
-</tr>
-<tr>
-<td align="left">list-style-type: none;</td>
-<td align="left"></td>
-</tr>
-<tr>
-<td align="left">}</td>
-<td align="left"></td>
-</tr>
-<tr>
-<td align="left">.apa p,     .apa li,     .apa dd,</td>
-<td align="left"></td>
-</tr>
-<tr>
-<td align="left">.ref-apa p, .ref-apa li, .ref-apa dd,</td>
-<td align="left"></td>
-</tr>
-<tr>
-<td align="left">.refapa p,  .refapa li,  .refapa dd,</td>
-<td align="left"></td>
-</tr>
-<tr>
-<td align="left">.apa-ref p, .apa-ref li, .apa-ref dd,</td>
-<td align="left"></td>
-</tr>
-<tr>
-<td align="left">.aparef p,  .aparef li,  .aparef dd{</td>
-<td align="left"></td>
-</tr>
-<tr>
-<td align="left">margin-left:   2em;</td>
-<td align="left"></td>
-</tr>
-<tr>
-<td align="left">text-indent:  -2em;</td>
-<td align="left"></td>
-</tr>
-<tr>
-<td align="left">margin-top: 1em;</td>
-<td align="left"></td>
-</tr>
-<tr>
-<td align="left">margin-bottom: 1em;</td>
-<td align="left"></td>
-</tr>
-<tr>
-<td align="left">}</td>
-<td align="left"></td>
-</tr>
-<tr>
-<td align="left">.ref-apa dt{</td>
-<td align="left"></td>
-</tr>
-<tr>
-<td align="left">font-size: 1.5em;</td>
-<td align="left"></td>
-</tr>
-<tr>
-<td align="left">font-weight: bold;</td>
-<td align="left"></td>
-</tr>
-<tr>
-<td align="left">margin: .83em 0;</td>
-<td align="left"></td>
-</tr>
-<tr>
-<td align="left">}</td>
-<td align="left"></td>
-</tr>
-<tr>
-<td align="left">}</td>
-<td align="left"></td>
-</tr>
-<tr>
-<td align="left">@media print {</td>
-<td align="left"></td>
-</tr>
 </tbody>
 </table>
-<p>.apa p,     .apa li,     .apa dd,
+<hr />
+<style>
+@media all {
+  .apa,     .apa ul,     .apa ol,     .apa dl,
+  .ref-apa, .ref-apa ul, .ref-apa ol, .ref-apa dl,
+  .apa-ref, .apa-ref ul, .apa-ref ol, .apa-ref dl,
+  .refapa,  .refapa ul,  .refapa ol,  .refapa dl,
+  .aparef,  .aparef ul,  .aparef ol,  .aparef dl{
+  padding-left: 0;margin-left: 0;       
+  }
+  .apa li,
+  .ref-apa li,
+  .refapa li,
+  .apa-ref li,
+  .aparef li{
+  list-style-type: none;
+  }
+  .apa p,     .apa li,     .apa dd,
+  .ref-apa p, .ref-apa li, .ref-apa dd,
+  .refapa p,  .refapa li,  .refapa dd,
+  .apa-ref p, .apa-ref li, .apa-ref dd,
+  .aparef p,  .aparef li,  .aparef dd{
+  margin-left:   2em;
+  text-indent:  -2em;
+  margin-top: 1em;
+  margin-bottom: 1em;
+  }
+  .ref-apa dt{
+  font-size: 1.5em;
+  font-weight: bold;
+  margin: .83em 0;
+  }
+}
+@media print {
+
+  .apa p,     .apa li,     .apa dd,
   .ref-apa p, .ref-apa li, .ref-apa dd,
   .refapa p,  .refapa li,  .refapa dd,
   .apa-ref p, .apa-ref li, .apa-ref dd,
@@ -637,9 +536,11 @@
   text-indent:  -.5in;
   margin-top: 1em;
   margin-bottom: 1em;
-  }</p>
-<p>}
-</style></p>
+  }
+
+}
+</style>
+
 <h2 id="references">References</h2>
 <div class="apa-ref" markdown="1">
 </div>

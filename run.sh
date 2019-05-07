@@ -1,1 +1,1 @@
-docker run -it --rm -v `pwd`:/docs -p 8001:8001 anthonyrawlinsuom/lfmc-docs
+docker run -it --rm -v `pwd`:/docs -p 8800:8800 anthonyrawlinsuom/lfmc-docs

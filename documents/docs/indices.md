@@ -55,7 +55,9 @@
 | **Precision** |   |
 | **Input types**  |   |
 | **Design intent** |   |
+
 ---
+
 <style>
 @media all {
   .apa,     .apa ul,     .apa ol,     .apa dl,
@@ -103,6 +105,7 @@
   
 }
 </style>
+
 ## References
 
 <div class="apa-ref" markdown="1">
